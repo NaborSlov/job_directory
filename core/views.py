@@ -42,7 +42,7 @@ class PositionListCreateView(View):
         new_position = Position.objects_pos.create(**data)
         json_data = {"data": asdict(new_position)}
 
-        return JsonResponse(json_data)
+        return JsonResponse(json_data, status=201)
 
 
 class PositionRetrieveUpdateDeleteView(View):
@@ -65,7 +65,7 @@ class PositionRetrieveUpdateDeleteView(View):
         id_position = kwargs['id']
         Position.objects_pos.delete(id_position)
 
-        return JsonResponse({"status": "ok"})
+        return JsonResponse({"status": "ok"}, status=203)
 
 
 class EmployerListCreateView(View):
@@ -82,7 +82,7 @@ class EmployerListCreateView(View):
         new_position = Employer.objects_emp.create(**data)
         json_data = {"data": asdict(new_position)}
 
-        return JsonResponse(json_data)
+        return JsonResponse(json_data, status=201)
 
 
 class EmployerRetrieveUpdateDeleteView(View):
@@ -105,4 +105,4 @@ class EmployerRetrieveUpdateDeleteView(View):
         id_position = kwargs['id']
         Employer.objects_emp.delete(id_position)
 
-        return JsonResponse({"status": "ok"})
+        return JsonResponse({"status": "ok"}, status=203)

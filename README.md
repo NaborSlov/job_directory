@@ -13,15 +13,27 @@ pip install -r requirements.txt
 
 ### Развертывание базы данных:
 
-Для удобства развертывания базы данных в папке database находиться файл docker-compose 
+* Для удобства развертывания базы данных в папке database находиться файл docker-compose 
 
 ```shell
 cd /database
 docker-compose up -d 
 ```
 
-loaddata.json файл для заполнения базы данных
+* Перед запуском проекта, накатываем миграции на базу данных командой
+
+```shell
+python ./manage.py migrate
+```
+
+* loaddata.json файл для заполнения базы данных
 
 ```shell
 pyhon ./manage.py loaddata ./database/loaddata.json
+```
+
+* Запуск проекта
+
+```shell
+python ./manage.py runserver
 ```

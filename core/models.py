@@ -14,7 +14,7 @@ class Position(models.Model):
     name = models.CharField(max_length=50)
     category = models.CharField(max_length=20, choices=category_choices)
 
-    objects_pos = PositionManager()
+    objects_pos = PositionManager()  # объявляем свой менеджер позиций
 
     def __str__(self):
         return self.name
@@ -33,7 +33,7 @@ class Employer(models.Model):
     age = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(120)])
     position = models.ForeignKey("Position", on_delete=models.PROTECT, null=True, blank=True)
 
-    objects_emp = EmployerManager()
+    objects_emp = EmployerManager()  # объявляем свой менеджер сотрудников
 
     def __str__(self):
         return self.first_name
