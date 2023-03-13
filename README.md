@@ -16,7 +16,7 @@ pip install -r requirements.txt
 * Для удобства развертывания базы данных в папке database находиться файл docker-compose 
 
 ```shell
-cd /database
+cd database/
 docker-compose up -d 
 ```
 
@@ -29,7 +29,7 @@ python ./manage.py migrate
 * loaddata.json файл для заполнения базы данных
 
 ```shell
-pyhon ./manage.py loaddata ./database/loaddata.json
+python ./manage.py loaddata ./database/loaddata.json
 ```
 
 * Запуск проекта
@@ -37,3 +37,5 @@ pyhon ./manage.py loaddata ./database/loaddata.json
 ```shell
 python ./manage.py runserver
 ```
+
+Адрес главной страницы - http://127.0.0.1:8000/index
