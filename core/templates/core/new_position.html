@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+
+{% block title %}Должность{% endblock %}
+
+{% block content %}
+    {% load static %}
+<form id="addForm" class="container mt-5">
+    <div class="row mt-3">
+        <label for="positionNameInput" class="form-label">Название должности</label>
+        <input type="text" class="form-control" id="positionNameInput" name="name" required>
+    </div>
+    <div class="row mt-3">
+        <label for="categorySelect" class="form-label">Категория</label>
+        <select class="form-select" id="categorySelect" name="category" required>
+            <option value="specialist">Специалист</option>
+            <option value="employee">Служащий</option>
+            <option value="worker">Рабочий</option>
+        </select>
+    </div>
+    <div class="row mt-3">
+        <button type="submit" class="btn btn-primary">Добавить</button>
+    </div>
+</form>
+    <script src={% static "js/position_new.js" %}></script>
+{% endblock %}

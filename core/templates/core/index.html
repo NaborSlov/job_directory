@@ -1,0 +1,48 @@
+{% extends "base/base.html" %}
+
+{% block title %}Справочник должностей{% endblock %}
+
+{% block content %}
+    {% load static %}
+<div class="container mt-5">
+    <h1>Справочник должностей</h1>
+    <div class="row mt-3">
+        <div class="col">
+            <h2>Должности</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Должность</th>
+                    <th>Категория</th>
+                    <th>Действия</th>
+                </tr>
+                </thead>
+                <tbody id="positions-table-body">
+                <!-- Здесь будут отображаться строки таблицы с должностями -->
+                </tbody>
+            </table>
+            <a class="btn btn-primary" href={% url "new_position" %}>Добавить должность</a>
+        </div>
+        <div class="col">
+            <h2>Сотрудники</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ФИО</th>
+                    <th>Пол</th>
+                    <th>Возраст</th>
+                    <th>Должность</th>
+                    <th>Категория</th>
+                    <th>Действия</th>
+                </tr>
+                </thead>
+                <tbody id="employees-table-body">
+                <!-- Здесь будут отображаться строки таблицы со списком сотрудников -->
+                </tbody>
+            </table>
+            <a class="btn btn-primary" href={% url "new_employer" %}>Добавить сотрудника</a>
+        </div>
+    </div>
+</div>
+    <script src={% static "js/index_script.js" %}></script>
+{% endblock %}

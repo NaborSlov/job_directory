@@ -1,0 +1,62 @@
+[
+  {
+    "model": "core.position",
+    "pk": 1,
+    "fields": {
+      "name": "Менеджер по продажам",
+      "category": "specialist"
+    }
+  },
+  {
+    "model": "core.position",
+    "pk": 2,
+    "fields": {
+      "name": "Кассир",
+      "category": "employee"
+    }
+  },
+  {
+    "model": "core.position",
+    "pk": 3,
+    "fields": {
+      "name": "Электромонтажник",
+      "category": "worker"
+    }
+  },
+  {
+    "model": "core.employer",
+    "pk": 1,
+    "fields": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "patronymic": "Smith",
+      "gender": "male",
+      "age": 35,
+      "position": 1
+    }
+  },
+  {
+    "model": "core.employer",
+    "pk": 2,
+    "fields": {
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "patronymic": "Smith",
+      "gender": "female",
+      "age": 28,
+      "position": 2
+    }
+  },
+  {
+    "model": "core.employer",
+    "pk": 3,
+    "fields": {
+      "first_name": "Bob",
+      "last_name": "Johnson",
+      "patronymic": "",
+      "gender": "male",
+      "age": 42,
+      "position": 3
+    }
+  }
+]
