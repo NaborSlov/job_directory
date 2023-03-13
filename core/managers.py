@@ -9,6 +9,7 @@ class PositionManager:
     """
     Менеджер для позиций
     """
+
     def all(self) -> List[Position]:
         """
         Получение всех позиций
@@ -21,11 +22,11 @@ class PositionManager:
 
         return results
 
-    def create(self, name, category) -> Position:
+    def create(self, name: str, category: str) -> Position:
         with connection.cursor() as cursor:
             cursor.execute(f"""
             INSERT INTO core_position (name, category)
-            VALUES '{name}', '{category}'
+            VALUES ('{name}', '{category}')
             RETURNING *;""")
             row = cursor.fetchone()
             return Position(*row) if row else None
@@ -87,6 +88,7 @@ class EmployerManager:
     """
     Менеджер для сотрудников
     """
+
     def all(self) -> List[Employer]:
         """
         Получение всех сотрудников
@@ -125,7 +127,7 @@ class EmployerManager:
         with connection.cursor() as cursor:
             cursor.execute(
                 f"""INSERT INTO core_employer (first_name, last_name, patronymic, gender, age, position_id)
-                VALUES '{first_name}', '{last_name}', '{patronymic}', '{gender}', '{age}', '{position_id}'
+                VALUES ('{first_name}', '{last_name}', '{patronymic}', '{gender}', '{age}', '{position_id}')
                 RETURNING *;""",
             )
 
